@@ -7,16 +7,11 @@ public class Worker {
         this.errorCallback = errorCallback;
     }
 
-    int e = 33;
-
-    public void error() {
-        errorCallback.onError("Task " + e + " ended with error");
-    }
 
     public void start() {
         for (int i = 1; i <= 100; i++) {
-            if (i == e) {
-                i++;
+            if (i == 33) {
+                errorCallback.onError("Task " + i + " finished with error");
             }
             callback.onDone("Task " + i + " is done");
 
