@@ -10,11 +10,11 @@ public class Worker {
 
     public void start() {
         for (int i = 1; i <= 100; i++) {
-            if (i == 33) {
-                errorCallback.onError("Task " + i + " finished with error");
+            if (i != 33) {
+                callback.onDone("Task " + i + " is done");
+            } else {
+                errorCallback.onError("Error: Task " + i + " is not done");
             }
-            callback.onDone("Task " + i + " is done");
-
         }
     }
 

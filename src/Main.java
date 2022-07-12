@@ -6,8 +6,5 @@ public class Main {
         OnTaskErrorListener errorListener = System.out::println;
         Worker worker = new Worker(listener, errorListener);
         worker.start();
-
-
-
     }
 }
